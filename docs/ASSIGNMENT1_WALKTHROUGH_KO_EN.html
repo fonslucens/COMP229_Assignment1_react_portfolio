@@ -1,0 +1,442 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>COMP229 과제 1 — 실행·내용·제출 안내</title><style>
+:root{--ink:#193c35;--muted:#53645e;--line:#d6dfd9;--pale:#edf3eb}*{box-sizing:border-box}body{margin:0;background:#f8f8f3;color:#25332e;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:16px;line-height:1.8}header{background:var(--ink);color:white;padding:44px max(24px,calc((100vw - 1050px)/2));}header h1{font-size:32px;line-height:1.35;margin:8px 0 16px;letter-spacing:-1px}header p{margin:0;color:#e0e9e1}.eyebrow{letter-spacing:2px;font-size:12px}nav{position:sticky;top:0;background:#f8f8f3f5;border-bottom:1px solid var(--line);padding:13px 24px;display:flex;flex-wrap:wrap;justify-content:center;gap:18px;z-index:2}nav a{font-weight:600;font-size:14px;color:var(--ink);text-decoration:none}main{max-width:1100px;margin:auto;padding:30px 26px 70px}h1{font-size:28px;line-height:1.4}h2{font-size:24px;line-height:1.5;border-top:1px solid var(--line);padding-top:30px;margin-top:40px;color:var(--ink);scroll-margin-top:90px}h3{font-size:19px;color:var(--ink);margin-top:30px}p{margin:14px 0}a{color:#195546;overflow-wrap:anywhere}li{margin:7px 0}code{font-family:Consolas,"SFMono-Regular",monospace;font-size:.88em;background:#e9eee6;padding:2px 5px;border-radius:3px;overflow-wrap:anywhere}pre{background:#203932;color:#f1f7ed;padding:20px 22px;border-radius:8px;overflow:auto;line-height:1.6}pre code{color:inherit;padding:0;background:none;white-space:pre;font-size:13px;overflow-wrap:normal}table{border-collapse:collapse;width:100%;margin:22px 0;background:white;font-size:14px;table-layout:auto}th,td{padding:12px 14px;border:1px solid var(--line);text-align:left;vertical-align:top;overflow-wrap:anywhere}th{background:var(--pale)}.notice{border-left:4px solid #608366;padding:17px 22px;background:#eaf0e5;margin-bottom:28px}.section-card{margin:45px 0 0;padding-top:18px;scroll-margin-top:70px}.section-tag{font-size:13px;letter-spacing:1.5px;font-weight:700;color:var(--muted)}#copy{background:white;border:1px solid var(--line);padding:28px;border-radius:10px}#copy>h1{font-size:30px}#copy p{max-width:900px}.muted{color:var(--muted);font-size:14px}@media(max-width:650px){header{padding:30px 20px}header h1{font-size:26px}main{padding:22px 18px 50px}nav{padding:10px 14px;gap:12px}nav a{font-size:12px}h2{font-size:21px}td,th{padding:9px 8px}#copy{padding:18px}pre{padding:15px;font-size:12px}}@media print{nav{display:none}header{background:white;color:black;padding:10px 0}header p{color:black}main{padding:0}pre{white-space:pre-wrap;color:black;background:#f1f1f1}pre code{white-space:pre-wrap}h2,h3{break-after:avoid}table{break-inside:auto}tr{break-inside:avoid}#copy{padding:0;border:0}}
+</style></head><body><header><div class="eyebrow">COMP229 · ASSIGNMENT 1</div><h1>사진과 면허를 반영한 React 포트폴리오<br>실행부터 제출까지</h1><p>Jihyun Kim · 한국어 작업 안내 + 실제 사이트의 영어 문장</p></header><nav><a href="#steps">① 실행·수정 순서</a><a href="#copy">② 페이지별 영어 내용</a><a href="#checks">③ 실제 검사 범위</a><a href="#sources">④ 자료 구분</a></nav><main><div class="notice"><strong>이 HTML 파일은 설명서입니다.</strong> 과제 사이트 자체는 ZIP 안의 React 프로젝트입니다. 사진과 2022년 한국 면허는 이미 반영했습니다. GitHub 업로드·배포·LMS 제출은 아직 이루어지지 않았습니다.</div><section id="steps"><h1>COMP 229 Assignment 1 — Jihyun Kim React Portfolio</h1>
+<h2>먼저 알아둘 것</h2>
+<p>이 프로젝트는 <strong>React로 만든 개인 포트폴리오 웹사이트</strong>입니다. Word 보고서가 아니라, 브라우저에서 메뉴를 눌러 볼 수 있는 사이트를 제출합니다. Home / About Me / Projects / Education / Services / Contact Me의 여섯 페이지가 있습니다.</p>
+<p>이번 수정본에는 보내주신 원본 사진과 <strong>Dental Hygienist Licence — South Korea, 2022</strong>를 반영했습니다. Home·About·학력·프로젝트·서비스·연락 안내 영어 문장과 이력서 PDF도 포함합니다. <code>docs/SITE_COPY_EN.md</code>에서 영어 문장만 따로 읽을 수 있습니다.</p>
+<p><strong>남은 일:</strong> 본인 컴퓨터에서 실행·검토·수정, 실제 Git commit 이력, GitHub 업로드, 본인 계정 배포, 공개 URL 테스트, LMS 제출입니다. 코드 참고/AI 도움에 관한 수업 규정을 확인하고, 사용하는 코드를 설명할 수 있도록 학습하세요. ZIP에는 가짜 Git 이력이나 공개 사이트 주소가 없습니다.</p>
+<p>이 환경의 npm 서버 DNS 연결이 실패하여 React 패키지 설치와 앱 전체의 실행·빌드는 확인하지 못했습니다. 폼 검증 함수 테스트 8개는 통과했습니다. 실제 검사 범위는 <code>docs/TEST_REPORT.md</code>에 구분했습니다.</p>
+<p>과제 파일에는 <code>Week 4, May 31st 11:59pm</code>이라고 적혀 있습니다. 현재 수업의 실제 마감일을 이 날짜로 단정하지 말고 LMS 과제 화면에서 확인하세요.</p>
+<h2>1. ZIP을 풀고 올바른 폴더 열기</h2>
+<ol>
+<li>ZIP 압축을 풉니다. Windows는 우클릭 → 압축 풀기, Mac은 ZIP 열기로 풀 수 있습니다.</li>
+<li>VS Code에서 <strong>File → Open Folder</strong>를 선택합니다.</li>
+<li><code>README_KO.md</code>와 <code>client</code>가 함께 보이는 <strong>COMP229_Assignment1_Jihyun</strong> 폴더를 엽니다. ZIP 파일 자체를 여는 것이 아닙니다.</li>
+<li><strong>Terminal → New Terminal</strong>을 엽니다.</li>
+</ol>
+<p>이전 프로젝트를 직접 수정한 적이 있다면 먼저 백업하고 변경된 파일을 비교하세요. 기존 <code>.git</code> 폴더를 삭제하지 않습니다. 이번 ZIP에는 <code>.git</code>이 없습니다.</p>
+<h2>2. Node와 Git 확인</h2>
+<pre><code class="language-bash">node --version
+npm --version
+git --version
+</code></pre>
+<p>명령이 버전 번호를 출력하면 해당 도구가 실행되는 상태입니다. 이 프로젝트 <code>package.json</code>은 Node 22.12 이상을 실행 기준으로 지정합니다. <code>node</code> 또는 <code>npm</code>을 찾지 못하면 Node 설치와 PATH를 확인한 뒤 VS Code 터미널을 다시 엽니다. Docker나 MongoDB는 이 프런트엔드 프로젝트의 실행 조건이 아닙니다.</p>
+<h2>3. 초기에 Git 기록 시작하기</h2>
+<p><strong>실행 위치: COMP229_Assignment1_Jihyun 최상위 폴더.</strong> 아직 Git이 연결되지 않은 새 폴더일 때만 다음과 같이 시작합니다.</p>
+<pre><code class="language-bash">git init -b main
+git add .
+git commit -m &quot;chore: add portfolio reference for review&quot;
+</code></pre>
+<p>작성자 정보 오류가 나면 이 저장소에서 이름과 본인의 Git 작성자 이메일을 지정합니다. 아래 YOUR_GIT_EMAIL은 실제 이메일 또는 GitHub에서 확인한 no-reply 이메일로 바꾸는 자리입니다.</p>
+<pre><code class="language-bash">git config user.name &quot;Jihyun Kim&quot;
+git config user.email &quot;YOUR_GIT_EMAIL&quot;
+</code></pre>
+<p>이후 commit을 다시 실행합니다. 기존 Git 프로젝트라면 <code>git status</code>부터 확인하고, 이미 초기화한 곳에서 이력을 새로 만들려고 하지 않습니다.</p>
+<h2>4. 패키지 설치하고 사이트 실행하기</h2>
+<p>최상위 폴더의 터미널에서:</p>
+<pre><code class="language-bash">cd client
+npm install
+npm test
+npm run dev
+</code></pre>
+<ul>
+<li><code>cd client</code>: package.json이 있는 React 프로젝트 폴더로 이동합니다.</li>
+<li><code>npm install</code>: package.json에 기록된 도구/라이브러리를 설치합니다. 인터넷 연결이 필요합니다.</li>
+<li><code>npm test</code>: 제공된 폼 검증 함수 테스트를 실행합니다. 전체 UI 테스트가 아닙니다.</li>
+<li><code>npm run dev</code>: 개발 서버를 시작합니다.</li>
+</ul>
+<p>터미널에 나오는 <strong>Local 주소</strong>를 브라우저에서 엽니다. 예시는 <code>http://localhost:5173/</code>이지만 포트가 다르면 실제 출력된 주소를 사용하세요. 성공하면 JK 로고, 여섯 개 메뉴, Jihyun 소개가 보입니다.</p>
+<p>개발 서버가 실행되는 동안 그 터미널은 사용 중입니다. 다른 명령은 새 터미널에서 실행하거나 <strong>Ctrl+C</strong>로 서버를 멈춘 뒤 실행합니다. 프로젝트가 이미 있으므로 여기서 <code>npm create vite</code>를 다시 실행하지 않습니다. <code>index.html</code>을 더블클릭하거나 VS Code Live Server로 여는 방식도 이 실행 절차를 대체하지 않습니다.</p>
+<p>설치가 성공한 뒤 생성되는 <code>package-lock.json</code>을 보관하고 Git에 포함하세요. 이 수정본에는 설치 성공을 가장한 lockfile을 넣지 않았습니다.</p>
+<h2>5. 무엇을 어느 파일에서 수정할까?</h2>
+<table>
+<thead>
+<tr>
+  <th>수정할 내용</th>
+  <th>파일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>이름, 학교 이메일, LinkedIn, Home 소개, About 문단, 학력, 프로젝트·서비스 설명</td>
+  <td><code>client/src/data/portfolio.js</code></td>
+</tr>
+<tr>
+  <td>메뉴 이름·순서·JK 로고</td>
+  <td><code>client/components/Layout.jsx</code></td>
+</tr>
+<tr>
+  <td>Home 화면 배치와 제출된 정보 표시</td>
+  <td><code>client/components/Home.jsx</code></td>
+</tr>
+<tr>
+  <td>About 사진·소개 배치와 PDF 버튼</td>
+  <td><code>client/src/about.jsx</code></td>
+</tr>
+<tr>
+  <td>프로젝트 카드 배치</td>
+  <td><code>client/src/project.jsx</code></td>
+</tr>
+<tr>
+  <td>학력과 면허 표시</td>
+  <td><code>client/src/education.jsx</code></td>
+</tr>
+<tr>
+  <td>서비스 카드 배치</td>
+  <td><code>client/src/services.jsx</code></td>
+</tr>
+<tr>
+  <td>연락처 패널, 입력 필드, 제출</td>
+  <td><code>client/src/contact.jsx</code></td>
+</tr>
+<tr>
+  <td>입력 검사 규칙</td>
+  <td><code>client/src/utils/validateContact.js</code></td>
+</tr>
+<tr>
+  <td>메뉴 주소와 화면 연결, 제출 데이터 보관</td>
+  <td><code>client/MainRouter.jsx</code></td>
+</tr>
+<tr>
+  <td>색, 글자 크기, 간격, 휴대폰 화면 배치</td>
+  <td><code>client/src/index.css</code></td>
+</tr>
+<tr>
+  <td>본인 사진</td>
+  <td><code>client/public/images/portrait.jpg</code></td>
+</tr>
+<tr>
+  <td>PDF 이력서</td>
+  <td><code>client/public/documents/Jihyun_Kim_Resume.pdf</code></td>
+</tr>
+</tbody>
+</table>
+<h3>사진과 면허 — 이미 반영됨</h3>
+<p><code>IMG_6800.JPG</code>를 웹사이트에서는 <code>portrait.jpg</code>라는 파일명으로 보관합니다. 사진 내용은 수정하지 않았습니다. 코드에는 다음 값이 들어 있습니다.</p>
+<pre><code class="language-js">portrait: &quot;/images/portrait.jpg&quot;,
+dentalLicenceYear: &quot;2022&quot;,
+</code></pre>
+<p>About에서 사진을 사용하고 Education 및 PDF에서 한국 면허 취득연도를 표시합니다. 웹 경로에 <code>public</code>을 덧붙이지 않습니다. 이름이 같은 PDF로 교체하면 기존 이력서 링크를 유지할 수 있습니다.</p>
+<h3>영어 내용 검토</h3>
+<p>영어 문장을 추가로 처음부터 작성할 필요는 없습니다. <code>docs/SITE_COPY_EN.md</code>와 실제 페이지를 보면서 자신이 설명할 수 있는 표현으로 고치세요. 취업 목표는 학습 중인 웹/데이터/요구사항 분석과 핀테크 관심으로 표현하고, 아직 전문 경력으로 입증되지 않은 분야를 expert라고 쓰지 않았습니다.</p>
+<p>Centennial은 재학 중, 졸업은 <strong>Expected: December 2028</strong>입니다. 코업 희망기간은 <strong>January–April 2027, four months</strong>입니다. 학위 취득으로 표기하지 않았습니다.</p>
+<h3>연락처 공개 범위</h3>
+<p>연락처 패널은 학교 이메일과 LinkedIn, Toronto를 표시합니다. 실제 개인 전화번호·집 주소·면허 번호는 기본 공개 정보에 넣지 않았습니다. Contact 폼의 Contact Number는 방문자가 입력하는 필드입니다. 배포 전에 이메일·이력서 등 공개할 내용을 검토하세요.</p>
+<h3>프로젝트 이미지</h3>
+<p>세 프로젝트의 SVG는 설명용 커버이고 실제 실행 캡처는 아닙니다. 이미지 캡션에도 구분했습니다. 과제는 프로젝트별 이미지를 요구하지만 실제 화면 캡처만 허용한다고 명시하지는 않습니다. 자신의 작업 결과를 더 잘 보여주려면 기존 SQL 결과 화면이나 Zipbob 화면을 본인이 확인해 캡처한 이미지로 교체하세요.</p>
+<p>예: <code>client/public/images/insurance-result.png</code>를 넣고 해당 프로젝트의 image를 <code>/images/insurance-result.png</code>로 수정합니다. imageAlt와 imageCaption도 새 이미지 내용에 맞게 고칩니다. 주민번호·실제 고객 정보·비밀번호가 보이는 화면은 넣지 않습니다.</p>
+<h2>6. 코드에서 이해할 세 가지 연결</h2>
+<h3>주소 → 화면</h3>
+<pre><code class="language-jsx">&lt;Route path=&quot;/about&quot; element={&lt;About /&gt;} /&gt;
+</code></pre>
+<p>주소가 <code>/about</code>일 때 About 컴포넌트를 보여주는 규칙입니다. 메뉴에서 이동하는 코드는 다음과 다릅니다.</p>
+<pre><code class="language-jsx">&lt;Link to=&quot;/about&quot;&gt;About Me&lt;/Link&gt;
+</code></pre>
+<p>Route는 화면의 대응 관계, Link는 클릭해서 이동할 요소입니다.</p>
+<h3>입력 → state</h3>
+<pre><code class="language-jsx">const [formData, setFormData] = useState(initialForm);
+
+function handleChange(event) {
+  const { name, value } = event.target;
+  const nextFormData = { ...formData, [name]: value };
+  setFormData(nextFormData);
+}
+</code></pre>
+<p>각 input의 <code>name</code>으로 어떤 필드인지 구분합니다. spread는 기존 다른 필드를 보존하고 <code>[name]</code>은 바뀐 필드만 업데이트합니다. 실제 프로젝트에는 제출 후 오류를 다시 검사하는 코드도 있습니다.</p>
+<h3>제출 → 부모 state → Home</h3>
+<pre><code class="language-jsx">onCapture({ ...formData });
+navigate(&quot;/&quot;);
+</code></pre>
+<p>Contact에서 검사가 통과하면 부모 MainRouter의 state에 데이터를 전달하고 Home으로 이동합니다. Home에서 다섯 필드를 표시해 정보 캡처를 확인할 수 있습니다. <code>useNavigate</code>는 과제의 이동을 구현하기 위해 추가한 기능이며, 교수님의 메뉴 예제와 완전히 동일한 코드는 아닙니다.</p>
+<p><strong>이 폼은 실제 이메일을 보내지 않습니다.</strong> 데이터베이스·서버 전송·영구 저장은 없습니다. 새로고침하면 캡처한 데이터가 사라집니다. 과제에서 처음부터 완전한 전송 기능을 요구하지 않아 이 방식으로 구현했습니다.</p>
+<h2>7. 브라우저에서 직접 검사하기</h2>
+<table>
+<thead>
+<tr>
+  <th>동작</th>
+  <th>기대하는 결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>여섯 메뉴 각각 클릭</td>
+  <td>해당 페이지가 열리고 메뉴가 표시됨</td>
+</tr>
+<tr>
+  <td>About 열기</td>
+  <td>실제 사진과 이름·소개가 보임</td>
+</tr>
+<tr>
+  <td>View résumé (PDF) 클릭</td>
+  <td>1페이지 PDF가 열림</td>
+</tr>
+<tr>
+  <td>Projects 열기</td>
+  <td>이미지·설명·역할·결과가 있는 카드 3개</td>
+</tr>
+<tr>
+  <td>Education 열기</td>
+  <td>학력 3개와 한국 면허 2022년</td>
+</tr>
+<tr>
+  <td>Contact에서 빈 폼 제출</td>
+  <td>오류 표시, Contact에 머무름</td>
+</tr>
+<tr>
+  <td>이메일을 <code>abc</code>로 입력</td>
+  <td>이메일 오류 표시</td>
+</tr>
+<tr>
+  <td>아래 샘플을 넣고 제출</td>
+  <td>Home으로 이동하고 5개 값이 표시됨</td>
+</tr>
+<tr>
+  <td>Clear captured data</td>
+  <td>캡처 표시가 사라짐</td>
+</tr>
+<tr>
+  <td>좁은 화면으로 확인</td>
+  <td>메뉴·사진·본문·폼이 화면 밖으로 잘리지 않음</td>
+</tr>
+</tbody>
+</table>
+<p>샘플(실제 방문자 개인정보 대신 테스트 데이터 사용):</p>
+<pre><code class="language-text">First Name: Test
+Last Name: Student
+Contact Number: 416-555-0123
+Email Address: student@example.com
+Message: I am testing my React portfolio contact form.
+</code></pre>
+<p>이메일의 기본 형태, 전화번호 숫자 개수, 메시지 길이 검사는 이 구현에서 정한 조건입니다. 과제 문서가 지정한 별도 배점 규칙이나 실제 소유권 확인 기능이 아닙니다.</p>
+<h2>8. 실제 변경 때마다 commit하기</h2>
+<p>React 폴더에서 작업했다면 Git 명령 전에 최상위 폴더로 한 번 이동할 수 있습니다.</p>
+<pre><code class="language-bash">cd ..
+git status
+git add .
+git commit -m &quot;content: personalise portfolio text after review&quot;
+</code></pre>
+<p>메시지는 실제 변경 내용에 맞게 바꿉니다. 프로젝트 스크린샷을 추가했을 때, 화면 스타일을 개선했을 때, 문제를 고쳤을 때 별도로 기록합니다. 빈 commit을 반복하거나 완성 후 날짜를 꾸며 개발 과정처럼 만들지 않습니다. 기존 commit이 한 번뿐이라면 앞으로 실제 검토·수정한 작업부터 기록하세요.</p>
+<h2>9. GitHub에 업로드하기</h2>
+<p>GitHub에서 새 저장소를 만들 때 예시 이름은 <code>comp229-react-portfolio</code>입니다. 실제 저장소는 본인 계정에 만듭니다. 현재 프로젝트에 이미 README와 .gitignore가 있으므로 GitHub 생성 화면에서 README/.gitignore/license 자동 추가를 선택하지 않아 빈 원격 저장소로 시작합니다.</p>
+<p>교수님이 열람할 수 있는 공개 범위로 설정하세요. 과제 파일 자체가 Public만 요구하지는 않으므로 Private을 쓰는 경우 열람 권한을 따로 확보해야 합니다.</p>
+<p>최상위 프로젝트 폴더에서 <strong>본인 저장소 주소</strong>로 연결합니다. 아래 YOUR-USERNAME과 YOUR-REPOSITORY는 그대로 두는 값이 아닙니다.</p>
+<pre><code class="language-bash">git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+git remote -v
+git push -u origin main
+</code></pre>
+<p>이미 origin이 있는 프로젝트는 <code>git remote -v</code>로 현재 연결을 확인하세요. 인증은 GitHub의 안내를 따르고 비밀번호나 토큰을 코드에 넣지 않습니다. 업로드 후 파일 목록에 <code>client</code>, <code>docs</code>, README 등이 있고 commit 이력이 보이는지 확인합니다. GitHub에는 ZIP 하나만 올리지 않습니다.</p>
+<h2>10. build → Netlify 배포</h2>
+<p><strong>다시 client 폴더에서 실행합니다.</strong> 이미 client 안이면 <code>cd client</code>를 또 하지 않습니다.</p>
+<pre><code class="language-bash">cd client
+npm run build
+npm run preview
+</code></pre>
+<p>build가 성공하면 <code>client/dist</code>가 생깁니다. preview는 배포용 파일을 로컬에서 확인하는 추가 명령입니다. 그 터미널의 Local 주소로 확인하고 Ctrl+C로 종료합니다.</p>
+<p>Netlify에 로그인하고 새 프로젝트의 수동 배포/drag-and-drop 영역에 <strong>dist 폴더</strong>를 올립니다. 강의 화면의 Add new project 문구는 서비스 화면에서 조금 다르게 보일 수 있습니다. ZIP 전체, src만, client 전체를 올리는 대신 <code>index.html</code>과 assets가 들어 있는 dist를 사용합니다.</p>
+<p><code>client/public/_redirects</code>는 <code>/about</code> 등을 직접 열거나 새로고침할 때 index.html을 제공하도록 추가한 Netlify용 설정입니다.</p>
+<pre><code class="language-text">/* /index.html 200
+</code></pre>
+<p>기존 파일을 유지하고 빌드 결과에도 포함되는지 확인하세요. 이는 모든 주소를 Home 주소로 바꾸는 redirect가 아니라 SPA 화면을 읽게 하는 rewrite입니다. 루트의 <code>netlify.toml</code>은 나중에 GitHub 연결 자동 배포를 할 때 사용할 수 있는 설정입니다. 처음에는 강의의 수동 dist 업로드 흐름만 따라가도 됩니다.</p>
+<p>공개 주소가 생기면 같은 테스트를 다시 하고 <code>/about</code>, <code>/project</code>, <code>/education</code>, <code>/services</code>, <code>/contact</code>를 직접 열어 새로고침도 해보세요. localhost는 다른 사람이 볼 공개 주소가 아닙니다.</p>
+<h2>11. 최종 ZIP과 LMS 제출</h2>
+<p>원본 개발 폴더를 삭제하지 말고 제출용 복사본을 만듭니다. 복사본에서 <code>node_modules</code>, <code>.git</code>, <code>.netlify</code>, 로그, 비밀정보와 <code>.env</code>를 제외합니다. 소스, package.json, 설치 후 생성한 package-lock.json, 이미지, PDF, 설정 파일은 유지합니다. dist는 원본 소스를 대신하는 제출물이 아닙니다.</p>
+<p>최종 세 가지:</p>
+<ol>
+<li>검토·수정한 React 프로젝트 ZIP</li>
+<li>본인의 GitHub 저장소 링크</li>
+<li>실제 배포된 포트폴리오 사이트 링크</li>
+</ol>
+<pre><code class="language-text">COMP229 – Assignment 1: React Portfolio
+Student: Jihyun Kim
+GitHub repository: [PASTE YOUR ACTUAL REPOSITORY URL]
+Live portfolio: [PASTE YOUR ACTUAL DEPLOYED URL]
+Project ZIP: [YOUR FINAL ZIP FILENAME]
+</code></pre>
+<p>대괄호 부분을 실제 값으로 교체한 뒤 제출합니다. 학번/분반 입력이 LMS에서 별도로 요구되면 본인 정보를 추가합니다. 파일 안내문에는 학번용 코드나 고정 ZIP 이름이 지정되어 있지 않습니다.</p>
+<h2>자주 막히는 지점</h2>
+<table>
+<thead>
+<tr>
+  <th>상황</th>
+  <th>먼저 확인할 것</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>package.json을 찾을 수 없다는 오류</td>
+  <td>터미널이 client 폴더인지</td>
+</tr>
+<tr>
+  <td>Missing script: start</td>
+  <td>이 프로젝트 명령은 npm run dev인지</td>
+</tr>
+<tr>
+  <td>vite 명령을 찾지 못함</td>
+  <td>npm install이 성공했는지</td>
+</tr>
+<tr>
+  <td>npm 설치 오류</td>
+  <td>첫 오류 메시지의 내용; 인터넷/DNS 또는 Node 버전 경고</td>
+</tr>
+<tr>
+  <td>사진이 안 나옴</td>
+  <td>portrait.jpg 파일, 확장자/대소문자, <code>/images/portrait.jpg</code></td>
+</tr>
+<tr>
+  <td>로컬은 되는데 배포 후 새로고침 오류</td>
+  <td>dist와 _redirects를 포함해 배포했는지</td>
+</tr>
+<tr>
+  <td>수정했는데 배포 사이트는 그대로</td>
+  <td>다시 build한 dist를 재배포했는지</td>
+</tr>
+<tr>
+  <td>nothing to commit</td>
+  <td>저장한 실제 파일 변경이 있는지; 빈 commit을 만들지 않기</td>
+</tr>
+</tbody>
+</table>
+<h2>자료 구분</h2>
+<p>과제 필수사항은 Assignment 1 안내문을 기준으로 했습니다. 컴포넌트·라우터·controlled form은 Week 1–2 자료의 개념을 사용했습니다. <code>useNavigate</code>, 공유 부모 state의 구체적 구성, 반응형 CSS, 테스트, Netlify rewrite는 요구사항을 구현하기 위한 추가 선택입니다. 모든 수업 예제(useReducer, 별점, React Hook Form 등)를 이 과제에 전부 넣어야 하는 것은 아닙니다.</p>
+</section><section id="copy" class="section-card"><h1>Website copy — Jihyun Kim</h1>
+<p>The following core English copy is already included in the React source. Edit the source as well if you change this reference document.</p>
+<h2>1. Home</h2>
+<p><strong>Welcome label</strong></p>
+<p>HELLO, I’M JIHYUN KIM</p>
+<p><strong>Headline</strong></p>
+<p>Software, data, and the people who use them.</p>
+<p><strong>Introduction</strong></p>
+<p>I am a Software Engineering Technology – Artificial Intelligence student at Centennial College. I am developing my skills in web applications, relational databases, and requirements analysis, with an interest in fintech and user-centred products.</p>
+<p><strong>Mission statement</strong></p>
+<p>My goal is to turn user needs into clear, useful software and make information easier to understand and act on.</p>
+<p><strong>Co-op line</strong></p>
+<p>Seeking a four-month co-op for January–April 2027.</p>
+<p><strong>Buttons</strong></p>
+<p>Get to know me · Explore my projects</p>
+<h2>2. About Me</h2>
+<p><strong>Jihyun Kim</strong></p>
+<p>AI Software Engineering Student</p>
+<p>I am a Software Engineering Technology – Artificial Intelligence student at Centennial College in Toronto. I am developing my skills in web applications, SQL, and requirements analysis, with an interest in fintech and user-centred products.</p>
+<p>Before studying software engineering, I completed an Associate Degree in Dental Hygiene and obtained my South Korean dental hygienist licence in 2022. My education and customer-facing experience in Korea and the UK have taught me to listen carefully, pay attention to detail, and communicate clearly.</p>
+<p>I contributed to the frontend of Zipbob, an award-winning team project, and strengthened my database skills through Oracle SQL coursework. I am now learning to build interactive applications with React and looking for opportunities to connect user needs with practical software solutions.</p>
+<p><strong>Buttons</strong></p>
+<p>View résumé (PDF) · Contact me</p>
+<h2>3. Projects</h2>
+<p>Projects &amp; coursework</p>
+<p>A clear account of what I worked on, what I contributed, and what the work produced.</p>
+<h3>Zipbob</h3>
+<p>Team project · October 2021</p>
+<p><strong>Description</strong></p>
+<p>A five-person Multicampus project connecting agricultural product information and price predictions with recipe recommendations.</p>
+<p><strong>My role</strong></p>
+<p>Front-end team member. Contributed HTML5, CSS, and JavaScript interface work to a Django and SQLite-based application.</p>
+<p><strong>Outcome</strong></p>
+<p>Collaborated in a five-person team to deliver a recipe recommendation service. The team received the Multicampus Top Excellence Award.</p>
+<p><strong>Technologies</strong></p>
+<p>HTML5, CSS, JavaScript, Django, SQLite</p>
+<p><strong>Image caption</strong></p>
+<p>Project overview illustration — not an application screenshot.</p>
+<p><strong>Project link</strong></p>
+<p>https://github.com/ginttone/Zipbob</p>
+<h3>Auto Insurance Database</h3>
+<p>Academic coursework · COMP 122 · 2026</p>
+<p><strong>Description</strong></p>
+<p>An Oracle SQL coursework project modelling vehicles, driver licences, and insurance policies in three related tables.</p>
+<p><strong>My role</strong></p>
+<p>Created the table definitions and applied primary keys, foreign keys, and CHECK constraints. Inserted sample data and documented SQL execution results.</p>
+<p><strong>Outcome</strong></p>
+<p>Produced three related tables with 12 sample records and documented constraints and execution results in SQL Developer.</p>
+<p><strong>Technologies</strong></p>
+<p>Oracle SQL, SQL Developer, Data integrity</p>
+<p><strong>Image caption</strong></p>
+<p>Simplified project illustration based on the coursework table relationships.</p>
+<h3>SQL Queries &amp; Record Maintenance</h3>
+<p>Academic coursework · COMP 122 · 2026</p>
+<p><strong>Description</strong></p>
+<p>Coursework using a provided JustLee bookstore database and a separate student table to practise queries and record maintenance.</p>
+<p><strong>My role</strong></p>
+<p>Wrote SELECT queries with aliases, DISTINCT, and filters. Created a student table and practised INSERT, UPDATE, and DELETE statements.</p>
+<p><strong>Outcome</strong></p>
+<p>Produced documented examples of data retrieval and record maintenance using the supplied bookstore database and a separate student table.</p>
+<p><strong>Technologies</strong></p>
+<p>Oracle SQL, SELECT, CRUD</p>
+<p><strong>Image caption</strong></p>
+<p>Learning-project illustration — not a screenshot of query results.</p>
+<h2>4. Education</h2>
+<p>A foundation that keeps growing.</p>
+<p>From healthcare to software engineering, with attention to people and detail throughout.</p>
+<h3>Centennial College</h3>
+<p>Advanced Diploma — Software Engineering Technology – Artificial Intelligence (Co-op)</p>
+<p>September 2025 – Present | In progress</p>
+<p>Expected graduation: December 2028. Coursework includes Database Concepts, Software Requirements Engineering, programming, Unix/Linux, and web application development.</p>
+<h3>Multicampus</h3>
+<p>Certificate — Big Data-Based Intelligent Service Development</p>
+<p>May 2021 – October 2021 | Completed</p>
+<p>Completed 844 hours of K-Digital Training, including the Zipbob team project. The project team received the Top Excellence Award.</p>
+<h3>Hanyang Women’s University</h3>
+<p>Associate Degree — Dental Hygiene</p>
+<p>March 2018 – February 2021 | Completed</p>
+<p>Healthcare education developed my attention to detail, professional communication, and documentation habits.</p>
+<h3>Dental Hygienist Licence</h3>
+<p>South Korea | 2022</p>
+<p>Obtained in South Korea in 2022.</p>
+<h2>5. Services</h2>
+<p>Ways I can contribute.</p>
+<p>Entry-level project support grounded in my coursework and frontend team experience.</p>
+<h3>Front-end web development</h3>
+<p>Support the implementation of clear, responsive interfaces using HTML, CSS, and JavaScript. I am extending this foundation with React components and forms.</p>
+<h3>SQL &amp; database support</h3>
+<p>Write basic SQL queries, work with related tables, and apply keys and constraints to support consistent data.</p>
+<h3>Requirements &amp; documentation</h3>
+<p>Help organise user needs, describe application behaviour, and document test steps and development decisions.</p>
+<p><strong>Call to action</strong></p>
+<p>Have a small project or a learning opportunity?</p>
+<p>I welcome conversations about where my current skills could be useful.</p>
+<p>Start a conversation</p>
+<h2>6. Contact Me</h2>
+<p>Let’s start with a conversation.</p>
+<p>I welcome conversations about co-op opportunities, student projects, and ways to contribute to web development, data, or business analysis.</p>
+<h3>Contact panel</h3>
+<p>Jihyun Kim<br />
+AI Software Engineering Student<br />
+Toronto, Ontario<br />
+jkim565@my.centennialcollege.ca<br />
+https://www.linkedin.com/in/jihyun-kim-34ba30346/</p>
+<p>For a real enquiry, please use the email or LinkedIn link above.</p>
+<h3>Form copy</h3>
+<p><strong>Fields:</strong> First Name · Last Name · Contact Number · Email Address · Message</p>
+<p><strong>Notice:</strong> Course demonstration: your entries will appear on Home after validation. Nothing is emailed or saved permanently. Use sample information when testing. All fields are required.</p>
+<p><strong>Button:</strong> Capture &amp; return Home</p>
+<p><strong>Validation summary:</strong> Please correct the fields below before continuing.</p>
+<h3>Home confirmation after a valid submission</h3>
+<p>Your form data was captured.</p>
+<p>You have returned to Home. This demonstration does not send an email or save data permanently.</p>
+<p><strong>Button:</strong> Clear captured data</p>
+</section><section id="checks" class="section-card"><h1>Validation report — updated portrait and licence version</h1>
+<h2>Checks actually performed in this update</h2>
+<ul>
+<li>Node.js 22.16.0: <code>npm test</code> — 8/8 pure contact-validation tests passed.</li>
+<li>14 JavaScript/JSX files parsed and transpiled for syntax using the available TypeScript compiler; no syntax diagnostics. This is not a React dependency/type compatibility check.</li>
+<li>19 relative import targets found on the case-sensitive local filesystem.</li>
+<li>CSS parsed with PostCSS; the three SVG assets parsed as XML.</li>
+<li>All configured portrait, project-image and resume paths point to existing public files.</li>
+<li>The portrait file is byte-for-byte identical to the user upload (SHA-256 comparison). Original image size: 1200 × 1500 pixels. No image generation, retouching or crop was applied.</li>
+<li>The updated resume PDF has one page. Text checks confirm the South Korea / 2022 licence and expected December 2028 graduation; the rendered page was visually inspected.</li>
+</ul>
+<h2>Not verified</h2>
+<p>A normal <code>npm install</code> failed because registry.npmjs.org could not be resolved (EAI_AGAIN). An offline attempt also failed because the required packages were not cached. Therefore a full React browser run and Vite build were NOT performed. There is no claim of an end-to-end browser pass or successful cloud deployment. No fabricated package-lock.json or prebuilt dist is included.</p>
+<p>No GitHub repository was created or pushed and no public URL was created. No development commits were fabricated. The source, supplied portrait and confirmed licence year are updated; actual local installation, browser checks, GitHub history and deployment remain user-side steps.</p>
+<h2>Reproduce on your computer</h2>
+<p>Run <code>npm install</code>, <code>npm test</code>, <code>npm run dev</code> and <code>npm run build</code> inside client. Test six-route navigation, About portrait, the PDF link, project images, invalid input, valid capture and all five fields on Home, clearing the receipt and narrow-screen layout. Repeat direct-route reloads and assets/form checks on the real public host.</p>
+</section><section id="sources" class="section-card"><h2>출처와 추가 구현의 구분</h2>
+<p>과제의 필수 항목은 <strong>Assignment 1 - React Portfolio-New(1).docx, 1–2쪽</strong>을 기준으로 했습니다. 실행과 폴더 구조는 <strong>Readt App - PORTFOLIO-New(1).pptx, 2·8·20·26·31–32번 슬라이드</strong>를, 폼은 <strong>React FormsN2 (1).pptx, 21–33번 슬라이드</strong>를 참고했습니다. 배포 순서는 <strong>Deploy React App(1)(1).pptx, 2–4번 슬라이드</strong>에 근거합니다.</p>
+<p>개인 내용은 이전 Analyst/Zipbob 이력서, 사용자가 확인한 학업·코업 일정, 이번에 제공한 사진과 2022년 면허 취득 정보를 반영했습니다. 프로젝트의 팀 전체 성과와 본인의 프런트엔드 역할을 구분했습니다.</p>
+<p>공식 문서로 보충한 항목은 다음과 같습니다. 과제에서 별도로 요구한 조건이 아니라 이 구현을 사용하는 데 필요한 설명입니다.</p>
+<ul>
+<li><a href="https://v7.vite.dev/guide/">Vite 7 환경과 npm scripts</a></li>
+<li><a href="https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github">GitHub로 로컬 저장소 업로드</a></li>
+<li><a href="https://docs.netlify.com/deploy/create-deploys/">Netlify 수동 배포</a></li>
+<li><a href="https://docs.netlify.com/manage/routing/redirects/rewrites-proxies/">Netlify SPA rewrite</a></li>
+</ul>
+</section><p class="muted">Updated for the supplied portrait and licence year. No external scripts or fonts are required to read this guide.</p></main></body></html>
